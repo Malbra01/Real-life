@@ -114,9 +114,62 @@ h1{
 }
 
 .det-sker{
-    font-size: 25px;
-    margin-top: 20px;
+    font-size: 3em;
     color: rgb(48, 83, 38);
+    background-color: rgba(232, 232, 232, 0.928);
+    padding: 30px;
+}
+/*Under folden*/
+.baggrund{
+    background-color: rgba(232, 232, 232, 0.928);
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+}
+
+.venstre-box{
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.højre-box-oppe{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.højre-box-nede{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.højre-box-oppe, .højre-box-nede, .venstre-box{
+    background-color: white;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.højre-box-nede p:nth-of-type(1), .højre-box-oppe p:nth-of-type(1), .venstre-box p:nth-of-type(1){
+    margin-bottom: 30px;
+}
+
+.højre-box-nede p, .højre-box-oppe p, .venstre-box p{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+img{
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+h3{
+    margin-bottom: 20px;
+    font-size: 1.6em;
 }
 
 @media screen and (max-width: 799px){
