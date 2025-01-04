@@ -1,4 +1,4 @@
-*{
+*{ /*generel styling*/
     box-sizing: border-box;
     margin: 0;
 }
@@ -7,13 +7,42 @@ img{
     max-width: 100%;
 }
 
+a, button{
+    cursor: pointer;
+}
+
 /*Header*/
 header{
     display: flex;
     justify-content: space-between;
     background-color: white;
-    align-items: center;
-    
+    align-items: center;    
+}
+
+header > nav{
+    display: none;
+}
+
+.show{
+    display: block;
+    position: absolute;
+    margin-top: 170px;
+}
+
+header ul{
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+}
+
+header a:hover{
+    font-size: 1.7em;
+    font-weight: bold;
 }
 
 button{
@@ -27,14 +56,18 @@ button{
 .logo{
     max-height: 70px;
     margin-right: 120px;
+    padding-top: 10px;
 }
 
-.åbent, .billetter, .søg{
+.åbent, 
+.billetter, 
+.søg{
     display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
     padding: 5px;
-    
+    text-decoration: none;
+    color: inherit;
 }
 
 .billetter{
@@ -64,22 +97,24 @@ button{
 
 h1{
     color: white;
-   
-    font-size: 6vw;
+    font-size: 5.8vw;
     margin-bottom: 80px;
     margin-top: 130px;
-    text-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
+    text-shadow: 9px 9px 11px rgba(0, 0, 0, 0.3);
 }
 
-.entre, .havekort, .kalender{
+.entre, 
+.havekort, 
+.kalender{
     background-color: rgba(66, 115, 53, 0.868);
     color: white;
     margin-top: 110px;
     margin-bottom: 30px;
-    max-width: 20vw;
+    max-width: 30vw;
     text-align: start;
     padding: 30px;
     border-radius: 10%;
+    text-decoration: none;
 } 
 
 .praktisk-info{
@@ -89,11 +124,14 @@ h1{
     gap: 30px;
 }
 
-.entre h2:first-child, .havekort h2:first-child, .kalender h2:first-child{
+.entre h2:first-child, 
+.havekort h2:first-child, 
+.kalender h2:first-child{
     margin-bottom: 20px;
 }
 
-.entre p + h2, .havekort p + h2{
+.entre p + h2, 
+.havekort p + h2{
     margin-top: 20px;
 }
 
@@ -101,7 +139,8 @@ h1{
     margin-bottom: 30px;
 }
 
-.entre p i.fa-solid.fa-arrow-right, .havekort p i.fa-solid.fa-arrow-right{
+.entre p i.fa-solid.fa-arrow-right, 
+.havekort p i.fa-solid.fa-arrow-right{
     margin-left: 100px; 
 }
 
@@ -113,13 +152,15 @@ h1{
     font-size: 2rem;
 }
 
+/*DET SKER I GEOGRAFISK HAVE*/
 .det-sker{
     font-size: 3em;
     color: rgb(48, 83, 38);
     background-color: rgba(232, 232, 232, 0.928);
     padding: 30px;
 }
-/*Under folden*/
+
+/*KULTURELLE VERDENSAFTENER/LYSUDSTILLING/SJOV FOR DE SMÅ*/
 .baggrund{
     background-color: rgba(232, 232, 232, 0.928);
 }
@@ -135,30 +176,46 @@ h1{
 .venstre-box{
     grid-column: 1 / 3;
     grid-row: 1 / 3;
+    min-height: 1130px !important;
 }
 
 .højre-box-oppe{
     grid-column: 3 / 4;
     grid-row: 1 / 2;
+    min-height: 550px;
 }
 
 .højre-box-nede{
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    min-height: 550px;
 }
 
-.højre-box-oppe, .højre-box-nede, .venstre-box{
+.højre-box-nede p:nth-of-type(3),
+.højre-box-oppe p:nth-of-type(3),
+.venstre-box p:nth-of-type(3){
+  margin-left: -19px; 
+  max-height: 50px;
+}
+
+.højre-box-oppe, 
+.højre-box-nede, 
+.venstre-box{
     background-color: white;
     border-radius: 25px;
     padding: 20px;
 }
 
-.højre-box-nede p:nth-of-type(1), .højre-box-oppe p:nth-of-type(1), .venstre-box p:nth-of-type(1){
+.højre-box-nede p:nth-of-type(1), 
+.højre-box-oppe p:nth-of-type(1), 
+.venstre-box p:nth-of-type(1){
     margin-bottom: 30px;
 }
 
-.højre-box-nede p, .højre-box-oppe p, .venstre-box p{
-    margin-bottom: 10px;
+.højre-box-nede p, 
+.højre-box-oppe p, 
+.venstre-box p{
+    margin-bottom: 20px;
     font-size: 20px;
 }
 
@@ -172,6 +229,833 @@ h3{
     font-size: 1.6em;
 }
 
-@media screen and (max-width: 799px){
-    
+/*Se flere plus-knap*/
+.plus-knap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 70px;
+    padding-top: 50px;
+    background-color: rgba(232, 232, 232, 0.928);
+}
+
+.plus{
+    background-color: rgba(28, 91, 28, 0.918);
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 15px;
+    font-size: 1em;
+    border: 1px solid black;
+    color: white;
+}
+
+/*EN VERDEN I EN HAVE*/
+.container-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 600px;
+    background-image: url(../img/kevin-RwqnLFDw0sE-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(232, 232, 232, 0.928);
+}
+
+.venstre-section, 
+.højre-section{
+    color: white;
+}
+
+.venstre-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.venstre-section h4{
+    font-size: 5.2em;
+    max-width: 60%;
+    margin-left: 50px;
+    margin-bottom: 40px;
+    text-shadow: 9px 9px 11px rgba(0, 0, 0, 0.3);
+}
+
+.om-haven{
+    background-color: white;
+    margin-left: 50px;
+    border-radius: 15px;
+    font-size: 1em;
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: 1px solid black;
+}
+
+.højre-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(66, 115, 53, 0.868);
+}
+
+.højre-section p{
+    font-size: 1.5em;
+    margin-left: 50px;
+    max-width: 68%;
+}
+
+/*PLANLÆG DIT BESØG*/
+h5{
+    font-size: 4em;
+    color: rgb(48, 83, 38);
+    background-color: rgba(232, 232, 232, 0.928);
+    padding: 50px;
+    padding-top: 80px;
+}
+
+/*FIND RUNDT I HAVEN OG PRAKTISK INFO*/
+.container-section2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 40px;
+}
+
+.venstre-section2{
+    background-color: rgb(48, 83, 38);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}    
+
+h6{
+    color: white;
+    font-size: 2em;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+}
+
+.venstre-section2 p{
+    color: white;
+    font-size: 1.4em;
+    margin-bottom: 120px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.find-vej{
+    border-radius: 20px;
+    font-size: 1.2em;
+    padding: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: 20px;
+}
+
+.højre-section2{
+    grid-column: 2 / 5;
+    display: grid;
+    grid-template-columns: auto 1fr 2fr;
+    grid-auto-rows: auto;
+    font-size: 1.2em;
+    padding: 20px;
+    padding-right: 20px;
+}
+
+.højre-section2-h,
+.højre-section2-m,
+.højre-section2-v{
+    display: grid;
+    grid-template-rows: repeat (5, minmax(3.5em, auto)); /*delestregerne drillede så meget. Grid er sat på forat rette stregerne ind, da højre-section2-h har tekst der fylder 2 linjer*/
+    gap: 40px;
+}
+
+.højre-section2-h a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.højre-section2-m > *,
+.højre-section2-h > *{
+    border-bottom: 1px solid black;
+    padding: 10px;
+    min-height: 3.5em;
+    display: flex;
+    align-items: center;
+}
+
+.højre-section2-m{
+    font-weight: bold;
+}
+
+.højre-section2-v{
+    font-size: 1.18em;
+}
+
+.fa-clock{
+    padding: 20px;
+}
+
+.fa-location-dot{
+    height: 350px;
+    padding-left: 22px;
+    font-size: 1.2em;
+}
+
+/*Facebook og instagram - Der skal lige kigges på instagram galleriet, det er ikke helt optimalt når man ændrer skærmstørrelse*/
+.container-section4{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 80px;
+}
+
+.section-venstre4{
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    max-width: 70%;
+    padding-top: 150px;
+}
+
+.fa-square-facebook, 
+.fa-square-instagram{
+    font-size: 3.5em;
+}
+
+.facebook-ikon{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.facebook{
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.facebook p:nth-of-type(2){
+    font-weight: bold;
+    font-size: 1.3em;
+} 
+
+.facebook-knap{
+    border-radius: 15px;
+    border: 1px solid black;
+    width: 150px;
+    font-size: 1em;
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-bottom: 40px;
+}
+
+.section-højre4{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding-right: 80px;
+    padding-top: 120px;
+}
+
+.grid-gallery{
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.grid-gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/*BLIV EN DEL AF HAVEFÆLLESSKABET*/
+.havefællesskab-submit{
+    display: flex;
+    flex-direction: column;
+}
+
+.havefællesskab{
+    display: flex;
+    color: black;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.havefællesskab-submit p{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.havefællesskab-submit form{
+    margin-left: 310px;
+    margin-bottom: 250px;
+}
+
+#email{
+    border-radius: 15px;
+    width: 40%; 
+    padding: 15px;
+}
+
+.indsend{
+    border: 1px solid black;
+    background-color: rgb(48, 83, 38);
+    font-size: 1em;
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+/*footer*/
+footer{
+    background-color: rgb(48, 83, 38);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 400px;
+}
+
+.footer-v, 
+.footer-m,
+.footer-h{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+}
+
+.footer-v p, 
+.footer-m p, 
+.footer-h p:nth-of-type(1){
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding-top: 70px;
+}
+
+.footer-v a, 
+.footer-h a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer-v a:hover, 
+.footer-h a:hover{ 
+    font-weight: bold;
+    font-size: 1.2em;
+}    
+
+.footer-v a{
+    padding-bottom: 10px;
+}
+
+.subscribe-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#email-footer{
+    padding: 10px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+#email-footer::placeholder{
+    color: black;
+    text-align: center;
+}
+
+.indsend-footer{
+    border-radius: 25px;
+    background-color: rgb(48, 83, 38);
+    color: white;
+    border: 2px solid white;
+    font-size: 0.9em;
+    width: 110px;
+    padding: 5px;
+}
+
+.footer-h p, 
+.footer-h a{
+    padding-bottom: 10px;
+}
+
+/*tablet*/
+@media screen and (min-width:768px) and (max-width:1024px){
+
+/*Header*/
+button{
+    margin-right: 15px;
+    font-size: 1.7rem;
+    padding-bottom: 5px;
+}
+
+.logo{
+    max-height: 50px;
+    padding-top: 10px;
+    margin-right: 0;
+}
+
+.åbent{
+    margin-left: 20px;
+}
+
+.åbent, 
+.billetter, 
+.søg{
+    font-size: 2vw;
+    padding-bottom: 10px;
+}
+
+/*hero*/
+h1{
+    font-size: 55px;
+    width: 90%;
+}
+
+.entre, 
+.havekort{
+    max-width: 40vw;
+} 
+
+.kalender{
+    display: none;
+}
+
+/*DET SKER I GEOGRAFISK HAVE*/
+.det-sker{
+    font-size: 1.7em;
+    display: flex;
+    flex-direction: row;
+    padding-top: 90px;
+}
+
+.det-sker h3:first-child::after{
+    content: "\00a0"; /*Laver et mellemrum mellem de to h3, for ikke at ændre på html*/
+}
+
+/*KULTURELLE VERDENSAFTENER/LYSUDSTILLING/SJOV FOR DE SMÅ*/
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.venstre-box{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    max-height: 900px;
+}
+
+.højre-box-oppe{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.højre-box-nede{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/*EN VERDEN I EN HAVE*/
+.venstre-section h4{
+    font-size: 4.5em;
+    margin-left: 40px;
+}
+
+/*PLANLÆG DIT BESØG*/
+h5{
+    font-size: 3.5em;
+}
+
+/*FIND RUNDT I HAVEN OG PRAKTISK INFO*/
+.container-section2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+}    
+
+.venstre-section2{
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    padding: 30px;
+}    
+
+.venstre-section2 p{
+    margin-bottom: 30px;
+}
+
+.find-vej{
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.højre-section2{
+    grid-column: 1 / 4;
+}
+
+/*Facebook og instagram - Der skal lige kigges på instagram galleriet, det er ikke helt optimalt*/ 
+.container-section4{
+    grid-template-columns: 0.7fr 1.3fr; /*Det giver mere plads til insta-grid*/
+} 
+
+.section-venstre4{
+    max-width: 90%;
+    padding-left: 30px;
+}
+
+.fa-square-facebook, 
+.fa-square-instagram{
+    font-size: 3.1em;
+}
+
+.facebook p:nth-of-type(2){
+    font-size: 1.2em;
+} 
+
+.facebook-knap{
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.section-højre4{
+    grid-template-columns: repeat(3, 1fr);
+    padding-right: 30px;
+    padding-top: 40px;
+    max-width: 600px;
+    max-height: 80vh;
+
+}
+
+.grid-gallery{
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative; /*placerer billedet*/
+}
+
+.grid-gallery img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*BLIV EN DEL AF HAVEFÆLLESSKABET*/
+.havefællesskab{
+    font-size: 1.5em;
+}
+
+.havefællesskab-submit p{
+    width: 92%;
+    font-size: 1.1em;
+    padding-left: 120px;
+}
+
+.havefællesskab-submit form{
+    margin-left: 120px;
+}
+
+#email{
+    width: 68%; 
+}
+}
+
+/*mobil*/
+@media screen and (max-width: 767px){
+   
+/*Header*/
+button{
+    font-size: 1.5rem;
+    color: black;
+}
+
+.logo{
+    margin-right: 0;
+}
+
+.åbent{
+    display: none;
+}
+
+.billetter{
+    border: 6px solid white;
+}
+
+.billetter p{
+    font-size: 0;
+}
+
+.billetter p .fa-ticket{
+    font-size: 1.7rem;
+    padding-bottom: 4px;
+}
+
+.søg .fa-magnifying-glass{
+    font-size: 0;
+}
+
+.søg p{
+    font-size: 1.2rem; /*Jeg kan ikke få søg og billetter til at være responsive*/
+    margin-top: 15px;
+}
+
+/*hero*/
+.hero{
+    text-align: start;
+    align-items: flex-start;
+}
+
+h1{
+    font-size: 8.7vw; /*Jeg syntes ikke at overskriften er markant nok ift. ups, men er i tvivl om hvad der skal gøres mere eller anderledes*/
+    padding-left: 15px;
+    margin-top: 175px;
+}   
+
+.havekort, 
+.kalender{
+    display: none;
+}
+
+.entre{
+    max-width: 70vw;
+    margin-left: 15px;
+} 
+
+/*DET SKER I GEOGRAFISK HAVE*/
+.det-sker{
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.det-sker h3:first-child::after{
+    content: " I"; /*Sætter I efter den første h3*/
+}
+
+.det-sker h3:last-child{
+    display: none; /*skjuler hele den anden h3-I GEOGRAFISK HAVE*/
+}
+
+.det-sker h3:first-child::after{ /*Tilføjer mellemrum mellem sker og i*/
+    content: " I";
+    white-space: pre;
+}
+
+.det-sker::after{
+    content: " GEOGRAFISK HAVE";
+    font-size: 1.7em;
+    font-weight: bold;
+    margin-bottom: -30px;
+}
+
+/*KULTURELLE VERDENSAFTENER/LYSUDSTILLING/SJOV FOR DE SMÅ*/
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.venstre-box{
+    display: none;
+}
+
+.højre-box-oppe{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.højre-box-nede,
+.højre-box-oppe{
+    font-size: 0.7rem;
+    min-height: 300px;
+}
+
+.højre-box-nede{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.højre-box-nede p,
+.højre-box-oppe p{
+    font-size: 1rem;
+}
+
+/*Se flere plus-knap*/
+.plus-knap{
+    padding-bottom: 70px;
+    padding-top: 20px;
+}
+
+.plus{
+    font-size: 0.9rem;
+}
+
+/*EN VERDEN I EN HAVE*/
+.container-section{
+    grid-template-columns: 1fr;
+    grid-auto-rows: 400px;
+}
+
+.højre-section{
+    display: none;
+}
+
+.venstre-section h4{
+    font-size: 10vw;
+    min-width: 60%;
+}
+
+.om-haven{
+    color: black;
+}
+
+/*PLANLÆG DIT BESØG*/
+h5{ /*Jeg kan ikke få kassen gjort mindre*/
+    font-size: 4vh;
+    padding-top: 50px;
+    margin-left: -25px;
+}
+
+/*FIND RUNDT I HAVEN OG PRAKTISK INFO*/
+.container-section2{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.venstre-section2{
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: -40px;
+    width: 85vw;
+    max-height: 410px;
+    margin-left: -12px;
+}
+
+h6{
+    font-size: 5.4vw;
+    margin-bottom: 20px;
+}
+
+.venstre-section2 p{
+    font-size: 4vw;
+    margin-bottom: 50px;
+    width: 250px;
+}
+
+.find-vej{
+    font-size: 0.9em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+    margin-top: -15px;
+    color: black;
+}
+
+.højre-section2{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.højre-section2{
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+    margin-top: -30px;
+}
+
+.højre-section2-m > *,
+.højre-section2-h > *{
+    border-bottom: 0;
+}
+
+/*facebook og instagram*/
+.container-section4{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.section-venstre4{
+    grid-row: 2;
+    padding-left: 20px;
+    margin-top: -70px;
+    margin-bottom: -70px;
+}
+
+.section-højre4{
+    grid-row: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.facebook-knap{
+    color: black;
+}
+
+/*BLIV EN DEL AF HAVEFÆLLESSKABET*/
+.havefællesskab-submit{
+    display: flex;
+    flex-direction: column;
+}
+
+.havefællesskab{
+    font-size: 1em;
+    padding-left: -30px;
+    padding-top: 20px;
+    justify-content: flex-start;
+}
+
+.havefællesskab-submit p{
+    font-size: 0.8em;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.havefællesskab-submit form{
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+#email{
+    border-radius: 8px;
+    width: 60%; 
+    padding: 10px;
+}
+
+.indsend{
+    font-size: 0.9em;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/*footer*/
+footer{
+    grid-template-columns: 1fr;
+}
+
+.footer-m{
+    margin-top: -190px;
+}
+
+.footer-h{
+    margin-bottom: 20px;
+}
+
+}
+
+
+@media screen and (max-width: 573px){ /*Jeg har desværre ikke evner til mere end denne løsning :(*/
+.højre-section2-h{
+    display: none;
+}
+
 }
